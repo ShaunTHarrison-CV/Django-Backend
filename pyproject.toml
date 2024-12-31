@@ -18,6 +18,11 @@ gunicorn = "^23.0.0"
 psycopg = "^3.2.3"
 
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+pytest-cov = "^6.0.0"
+freezegun = "^1.5.1"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
