@@ -13,6 +13,3 @@ class CompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Company
         exclude = ["id", "owner_groups"]
-
-
-

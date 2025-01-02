@@ -11,7 +11,7 @@ router.register("companies", views.CompanyViewSet)
 swagger_view = get_schema_view(
     openapi.Info(
         title="Shaun Harrison CV API",
-        default_version='v1',
+        default_version="v1",
         description="Example API",
         contact=openapi.Contact(email="shaun.harrison@live.co.uk"),
     ),
@@ -20,8 +20,8 @@ swagger_view = get_schema_view(
 )
 
 urlpatterns = [
-    path('', swagger_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    path('swagger<format>/', swagger_view.without_ui(cache_timeout=0), name='schema-json'),
-    path('redoc/', swagger_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    path("", swagger_view.with_ui("swagger", cache_timeout=0), name="schema-swagger-ui"),
+    path("swagger<format>/", swagger_view.without_ui(cache_timeout=0), name="schema-json"),
+    path("redoc/", swagger_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
     path("api/", include(router.urls)),
 ]

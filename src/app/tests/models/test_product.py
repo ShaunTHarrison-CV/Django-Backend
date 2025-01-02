@@ -1,5 +1,4 @@
 import pytest
-from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.test import TestCase
 
@@ -11,7 +10,7 @@ class TestModelProduct(TestCase):
     fixtures = ["unit_test.json"]
 
     def setUp(self):
-        self.company = Company.objects.get(code="FXC001")
+        self.company = Company.objects.get(code="ABC001")
 
     def test_create(self):
         product = Product.objects.create(company=self.company, code="PRD001", name="Product 1", price=123)
@@ -22,7 +21,12 @@ class TestModelProduct(TestCase):
 
     def test_create_duplicate_code(self):
         # Existing code in different company, allow creation
-        Product.objects.create(company=Company.objects.get(code="FXC002"), code="FXP001", name="Product 1", price=123)
+        Product.objects.create(
+            company=Company.objects.get(code="ABC002"),
+            code="FXP001",
+            name="Product 1",
+            price=123,
+        )
 
         # Duplicate code within company, raise error
         with pytest.raises(IntegrityError) as e:
@@ -30,4 +34,4 @@ class TestModelProduct(TestCase):
         assert e.value.args == ("UNIQUE constraint failed: app_product.company_id, app_product.code",)
 
     def test_str(self):
-        assert str(Product.objects.get(code="FXP001")) == "FXP001 - FXC001"
+        assert str(Product.objects.get(code="FXP001")) == "FXP001 - ABC001"

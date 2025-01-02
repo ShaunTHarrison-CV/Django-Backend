@@ -22,13 +22,13 @@ class TestModelCompany(TestCase):
 
     def test_create_duplicate_code(self):
         with pytest.raises(IntegrityError) as e:
-            Company.objects.create(code="FXC001", name="Company 1")
+            Company.objects.create(code="ABC001", name="Company 1")
         assert e.value.args == ("UNIQUE constraint failed: app_company.code",)
 
     def test_property_total_product(self):
-        assert Company.objects.get(code="FXC001").total_products == 1
-        assert Company.objects.get(code="FXC002").total_products == 1
+        assert Company.objects.get(code="ABC001").total_products == 1
+        assert Company.objects.get(code="ABC002").total_products == 1
         assert Company.objects.get(code="FXC003").total_products == 0
 
     def test_str(self):
-        assert str(Company.objects.get(code="FXC001")) == "FXC001"
+        assert str(Company.objects.get(code="ABC001")) == "ABC001"

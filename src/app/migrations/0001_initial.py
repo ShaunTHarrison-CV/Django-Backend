@@ -50,9 +50,7 @@ class Migration(migrations.Migration):
                 ("active_listing", models.BooleanField(default=True)),
                 (
                     "company",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.PROTECT, to="app.company"
-                    ),
+                    models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to="app.company"),
                 ),
             ],
             options={
@@ -76,9 +74,7 @@ class Migration(migrations.Migration):
                 ("timestamp", models.DateTimeField(auto_now_add=True)),
                 (
                     "product",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.PROTECT, to="app.product"
-                    ),
+                    models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to="app.product"),
                 ),
                 (
                     "user",

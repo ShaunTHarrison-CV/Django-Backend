@@ -7,6 +7,6 @@ class CompanyFilter(filters.FilterSet):
     class Meta:
         model = models.Company
         fields = {
-            'code': ['exact', 'icontains'],
-            'name': ['exact', 'icontains'],
+            "code": ["exact", "icontains"],
+            "name": ["exact", "icontains"],
         }

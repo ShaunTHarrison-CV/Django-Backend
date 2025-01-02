@@ -12,6 +12,7 @@ class CompanyViewSet(viewsets.ModelViewSet):
     queryset = models.Company.objects.all().order_by("code")
     serializer_class = serializers.CompanySerializer
     filterset_class = filter_backends.CompanyFilter
+    lookup_field = "code"
 
     def get_serializer_class(self):
         if self.request.user.is_superuser:

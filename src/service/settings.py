@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+
 import os
 from pathlib import Path
 
@@ -34,7 +35,7 @@ INSTALLED_APPS = [
     "rest_framework",  # Framework for API views
     "django_filters",  # Query parameter based filtering
     "drf_yasg",  # Swagger generator and UI
-    "app"  # Actual application
+    "app",  # Actual application
 ]
 
 MIDDLEWARE = [
@@ -123,7 +124,5 @@ REST_FRAMEWORK = {
     ],
     "DEFAULT_PAGINATION_CLASS": "service.pagination.CustomPageSizePagination",
     "PAGE_SIZE": 50,
-    "DEFAULT_FILTER_BACKENDS": [
-        "django_filters.rest_framework.DjangoFilterBackend"
-    ]
+    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }

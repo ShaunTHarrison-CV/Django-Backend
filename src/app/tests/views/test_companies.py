@@ -42,12 +42,29 @@ class TestModelCompany(APITestCase):
             assert self.client.get("/api/companies/?pageSize=10").json() == json.load(infile)
 
     def test_list_companies_filter(self):
-        for term, value in [("code", "ABC001"), ("code__icontains", "ABC"), ("name", "ABC Company"), ("name__icontains", "ABC")]:
+        for term, value in [
+            ("code", "ABC001"),
+            ("code__icontains", "ABC"),
+            ("name", "ABC Company"),
+            ("name__icontains", "ABC"),
+        ]:
             with open(f"app/tests/views/fixtures/list_companies_filter_{term}.json") as infile:
                 assert self.client.get("/api/companies/", query_params={term: value}).json() == json.load(infile)
 
     def test_retrieve_company(self):
-        assert False
+        response = self.client.get("/api/companies/ABC001/")
+        assert response.status_code == 200
+        assert response.json() == {"code": "ABC001", "name": "ABC Company"}
+
+        self.client.force_login(User.objects.get(username="admin"))
+        response = self.client.get("/api/companies/ABC001/")
+        assert response.status_code == 200
+        assert response.json() == {
+            "code": "ABC001",
+            "id": 1,
+            "name": "ABC Company",
+            "owner_groups": [1, 3],
+        }
 
     def test_create_company(self):
         assert False
