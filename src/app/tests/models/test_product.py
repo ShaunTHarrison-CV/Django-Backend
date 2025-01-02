@@ -11,7 +11,6 @@ class TestModelProduct(TestCase):
     fixtures = ["unit_test.json"]
 
     def setUp(self):
-        self.user = User.objects.get(username="test-admin")
         self.company = Company.objects.get(code="FXC001")
 
     def test_create(self):

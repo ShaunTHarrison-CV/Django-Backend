@@ -1,0 +1,207 @@
+{
+  "count": 129,
+  "next": "http://testserver/api/companies/?page=2",
+  "previous": null,
+  "results": [
+    {
+      "code": "FXC001",
+      "name": "Fixture Company 1"
+    },
+    {
+      "code": "FXC002",
+      "name": "Fixture Company 2"
+    },
+    {
+      "code": "FXC003",
+      "name": "Fixture Company 3"
+    },
+    {
+      "code": "FXC004",
+      "name": "Fixture Company 4"
+    },
+    {
+      "code": "FXC005",
+      "name": "Fixture Company 5"
+    },
+    {
+      "code": "FXC006",
+      "name": "Fixture Company 6"
+    },
+    {
+      "code": "FXC007",
+      "name": "Fixture Company 7"
+    },
+    {
+      "code": "FXC008",
+      "name": "Fixture Company 8"
+    },
+    {
+      "code": "FXC009",
+      "name": "Fixture Company 9"
+    },
+    {
+      "code": "FXC010",
+      "name": "Fixture Company 10"
+    },
+    {
+      "code": "FXC011",
+      "name": "Fixture Company 11"
+    },
+    {
+      "code": "FXC012",
+      "name": "Fixture Company 12"
+    },
+    {
+      "code": "FXC013",
+      "name": "Fixture Company 13"
+    },
+    {
+      "code": "FXC014",
+      "name": "Fixture Company 14"
+    },
+    {
+      "code": "FXC015",
+      "name": "Fixture Company 15"
+    },
+    {
+      "code": "FXC016",
+      "name": "Fixture Company 16"
+    },
+    {
+      "code": "FXC017",
+      "name": "Fixture Company 17"
+    },
+    {
+      "code": "FXC018",
+      "name": "Fixture Company 18"
+    },
+    {
+      "code": "FXC019",
+      "name": "Fixture Company 19"
+    },
+    {
+      "code": "FXC020",
+      "name": "Fixture Company 20"
+    },
+    {
+      "code": "FXC021",
+      "name": "Fixture Company 21"
+    },
+    {
+      "code": "FXC022",
+      "name": "Fixture Company 22"
+    },
+    {
+      "code": "FXC023",
+      "name": "Fixture Company 23"
+    },
+    {
+      "code": "FXC024",
+      "name": "Fixture Company 24"
+    },
+    {
+      "code": "FXC025",
+      "name": "Fixture Company 25"
+    },
+    {
+      "code": "FXC026",
+      "name": "Fixture Company 26"
+    },
+    {
+      "code": "FXC027",
+      "name": "Fixture Company 27"
+    },
+    {
+      "code": "FXC028",
+      "name": "Fixture Company 28"
+    },
+    {
+      "code": "FXC029",
+      "name": "Fixture Company 29"
+    },
+    {
+      "code": "FXC030",
+      "name": "Fixture Company 30"
+    },
+    {
+      "code": "FXC031",
+      "name": "Fixture Company 31"
+    },
+    {
+      "code": "FXC032",
+      "name": "Fixture Company 32"
+    },
+    {
+      "code": "FXC033",
+      "name": "Fixture Company 33"
+    },
+    {
+      "code": "FXC034",
+      "name": "Fixture Company 34"
+    },
+    {
+      "code": "FXC035",
+      "name": "Fixture Company 35"
+    },
+    {
+      "code": "FXC036",
+      "name": "Fixture Company 36"
+    },
+    {
+      "code": "FXC037",
+      "name": "Fixture Company 37"
+    },
+    {
+      "code": "FXC038",
+      "name": "Fixture Company 38"
+    },
+    {
+      "code": "FXC039",
+      "name": "Fixture Company 39"
+    },
+    {
+      "code": "FXC040",
+      "name": "Fixture Company 40"
+    },
+    {
+      "code": "FXC041",
+      "name": "Fixture Company 41"
+    },
+    {
+      "code": "FXC042",
+      "name": "Fixture Company 42"
+    },
+    {
+      "code": "FXC043",
+      "name": "Fixture Company 43"
+    },
+    {
+      "code": "FXC044",
+      "name": "Fixture Company 44"
+    },
+    {
+      "code": "FXC045",
+      "name": "Fixture Company 45"
+    },
+    {
+      "code": "FXC046",
+      "name": "Fixture Company 46"
+    },
+    {
+      "code": "FXC047",
+      "name": "Fixture Company 47"
+    },
+    {
+      "code": "FXC048",
+      "name": "Fixture Company 48"
+    },
+    {
+      "code": "FXC049",
+      "name": "Fixture Company 49"
+    },
+    {
+      "code": "FXC050",
+      "name": "Fixture Company 50"
+    }
+  ]
+}

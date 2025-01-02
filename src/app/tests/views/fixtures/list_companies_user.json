@@ -1,0 +1,19 @@
+{
+  "count": 3,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "code": "FXC001",
+      "name": "Fixture Company 1"
+    },
+    {
+      "code": "FXC002",
+      "name": "Fixture Company 2"
+    },
+    {
+      "code": "FXC003",
+      "name": "Fixture Company 3"
+    }
+  ]
+}

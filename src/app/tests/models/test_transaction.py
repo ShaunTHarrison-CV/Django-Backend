@@ -14,7 +14,7 @@ class TestModelTransaction(TestCase):
     fixtures = ["unit_test.json"]
 
     def setUp(self):
-        self.user = User.objects.get(username="test-admin")
+        self.user = User.objects.get(username="User1")
         self.product = Product.objects.get(code="FXP001")
 
     @freeze_time("2025-01-01 18:00:00")

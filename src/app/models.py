@@ -1,9 +1,9 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.db import models
 
 
 class Company(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.PROTECT)
+    owner_groups = models.ManyToManyField(Group)
     code = models.CharField(max_length=100, unique=True)
     name = models.CharField(max_length=100)
 
@@ -20,6 +20,7 @@ class Product(models.Model):
     code = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     price = models.IntegerField()  # Price stored in pence to avoid floating point errors
+    active_listing = models.BooleanField(default=True)  # Inactive listing are no longer for sale
 
     class Meta:
         unique_together = ("company", "code")

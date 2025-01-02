@@ -1,0 +1,123 @@
+{
+  "count": 129,
+  "next": null,
+  "previous": "http://testserver/api/companies/?page=2",
+  "results": [
+    {
+      "code": "FXC101",
+      "name": "Fixture Company 101"
+    },
+    {
+      "code": "FXC102",
+      "name": "Fixture Company 102"
+    },
+    {
+      "code": "FXC103",
+      "name": "Fixture Company 103"
+    },
+    {
+      "code": "FXC104",
+      "name": "Fixture Company 104"
+    },
+    {
+      "code": "FXC105",
+      "name": "Fixture Company 105"
+    },
+    {
+      "code": "FXC106",
+      "name": "Fixture Company 106"
+    },
+    {
+      "code": "FXC107",
+      "name": "Fixture Company 107"
+    },
+    {
+      "code": "FXC108",
+      "name": "Fixture Company 108"
+    },
+    {
+      "code": "FXC109",
+      "name": "Fixture Company 109"
+    },
+    {
+      "code": "FXC110",
+      "name": "Fixture Company 110"
+    },
+    {
+      "code": "FXC111",
+      "name": "Fixture Company 111"
+    },
+    {
+      "code": "FXC112",
+      "name": "Fixture Company 112"
+    },
+    {
+      "code": "FXC113",
+      "name": "Fixture Company 113"
+    },
+    {
+      "code": "FXC114",
+      "name": "Fixture Company 114"
+    },
+    {
+      "code": "FXC115",
+      "name": "Fixture Company 115"
+    },
+    {
+      "code": "FXC116",
+      "name": "Fixture Company 116"
+    },
+    {
+      "code": "FXC117",
+      "name": "Fixture Company 117"
+    },
+    {
+      "code": "FXC118",
+      "name": "Fixture Company 118"
+    },
+    {
+      "code": "FXC119",
+      "name": "Fixture Company 119"
+    },
+    {
+      "code": "FXC120",
+      "name": "Fixture Company 120"
+    },
+    {
+      "code": "FXC121",
+      "name": "Fixture Company 121"
+    },
+    {
+      "code": "FXC122",
+      "name": "Fixture Company 122"
+    },
+    {
+      "code": "FXC123",
+      "name": "Fixture Company 123"
+    },
+    {
+      "code": "FXC124",
+      "name": "Fixture Company 124"
+    },
+    {
+      "code": "FXC125",
+      "name": "Fixture Company 125"
+    },
+    {
+      "code": "FXC126",
+      "name": "Fixture Company 126"
+    },
+    {
+      "code": "FXC127",
+      "name": "Fixture Company 127"
+    },
+    {
+      "code": "FXC128",
+      "name": "Fixture Company 128"
+    },
+    {
+      "code": "FXC129",
+      "name": "Fixture Company 129"
+    }
+  ]
+}

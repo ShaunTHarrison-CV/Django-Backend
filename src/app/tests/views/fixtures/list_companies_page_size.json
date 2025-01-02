@@ -1,0 +1,47 @@
+{
+  "count": 129,
+  "next": "http://testserver/api/companies/?page=2&pageSize=10",
+  "previous": null,
+  "results": [
+    {
+      "code": "FXC001",
+      "name": "Fixture Company 1"
+    },
+    {
+      "code": "FXC002",
+      "name": "Fixture Company 2"
+    },
+    {
+      "code": "FXC003",
+      "name": "Fixture Company 3"
+    },
+    {
+      "code": "FXC004",
+      "name": "Fixture Company 4"
+    },
+    {
+      "code": "FXC005",
+      "name": "Fixture Company 5"
+    },
+    {
+      "code": "FXC006",
+      "name": "Fixture Company 6"
+    },
+    {
+      "code": "FXC007",
+      "name": "Fixture Company 7"
+    },
+    {
+      "code": "FXC008",
+      "name": "Fixture Company 8"
+    },
+    {
+      "code": "FXC009",
+      "name": "Fixture Company 9"
+    },
+    {
+      "code": "FXC010",
+      "name": "Fixture Company 10"
+    }
+  ]
+}

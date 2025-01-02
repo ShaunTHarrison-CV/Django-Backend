@@ -24,7 +24,13 @@ GET  /api/transactions/<reference>/ - Get details of a specific transaction.
 
 
 ## Security Design
-Users must be logged in to access any API endpoints apart from the swagger docs. When accessing a list endpoint the backend will
+Companies are associated with a Django user group. Modifying the company or creating a product under a company requires the logged in user to be
+
+Users must be logged in to access any API endpoints apart from the swagger docs. 
+Users can only modify Companies/Products that they have permission to. Attempting to modify a Company/Product for a different user will return a 403.
+Users can only see Transactions that they own. Listing Transactions will show only that user's transactions. Attempting to retrieve a 
+
+When accessing a list endpoint the backend will
 filter for only resources that are owned by the logged in user. If the user requests a resource that exists but they are not allowed to
 see, a 404 response will be given. This is to prevent attackers from iterating through codes to build a list of valid codes.
 
