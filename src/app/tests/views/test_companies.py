@@ -42,7 +42,9 @@ class TestModelCompany(APITestCase):
             assert self.client.get("/api/companies/?pageSize=10").json() == json.load(infile)
 
     def test_list_companies_filter(self):
-        assert False
+        for term, value in [("code", "ABC001"), ("code__icontains", "ABC"), ("name", "ABC Company"), ("name__icontains", "ABC")]:
+            with open(f"app/tests/views/fixtures/list_companies_filter_{term}.json") as infile:
+                assert self.client.get("/api/companies/", query_params={term: value}).json() == json.load(infile)
 
     def test_retrieve_company(self):
         assert False

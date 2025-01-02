@@ -4,12 +4,12 @@
   "previous": null,
   "results": [
     {
-      "code": "FXC001",
-      "name": "Fixture Company 1"
+      "code": "ABC001",
+      "name": "ABC Company"
     },
     {
-      "code": "FXC002",
-      "name": "Fixture Company 2"
+      "code": "ABC002",
+      "name": "ABC Company 2"
     },
     {
       "code": "FXC003",

@@ -16,6 +16,7 @@ drf-yasg = "^1.21.7"
 django-cors-headers = "^4.4.0"
 gunicorn = "^23.0.0"
 psycopg = "^3.2.3"
+django-filter = "^24.3"
 
 
 [tool.poetry.group.dev.dependencies]

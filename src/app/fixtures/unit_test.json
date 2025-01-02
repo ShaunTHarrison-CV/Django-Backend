@@ -113,8 +113,8 @@
     "model": "app.company",
     "pk": 1,
     "fields": {
-      "code": "FXC001",
-      "name": "Fixture Company 1",
+      "code": "ABC001",
+      "name": "ABC Company",
       "owner_groups": [
         1,
         3
@@ -125,8 +125,8 @@
     "model": "app.company",
     "pk": 2,
     "fields": {
-      "code": "FXC002",
-      "name": "Fixture Company 2",
+      "code": "ABC002",
+      "name": "ABC Company 2",
       "owner_groups": [
         2,
         3
