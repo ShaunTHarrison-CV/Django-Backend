@@ -3,12 +3,22 @@ from rest_framework import viewsets, mixins
 from app import models, serializers, filter_backends
 
 
+class ModelViewSetNoDestroy(
+    mixins.CreateModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.ListModelMixin,
+    viewsets.GenericViewSet,
+):
+    pass
+
+
 class CreateWithAuthenticatedUserMixin(mixins.CreateModelMixin):
     def perform_create(self, serializer):
         return serializer.save(user=self.request.user)
 
 
-class CompanyViewSet(viewsets.ModelViewSet):
+class CompanyViewSet(ModelViewSetNoDestroy):
     queryset = models.Company.objects.all().order_by("code")
     serializer_class = serializers.CompanySerializer
     filterset_class = filter_backends.CompanyFilter
