@@ -19,8 +19,8 @@ POST  /api/companies/<code>/products/<code>/transactions/ - Create a transaction
 GET   /api/companies/<code>/products/<code>/transactions/<reference>/ - Get details of a specific transaction.
 
 GET  /api/products/ - List all products across all companies.
-GET  /api/transactions/ - List all transactions for the logged in user.
-GET  /api/transactions/<reference>/ - Get details of a specific transaction.
+GET  /api/user/transactions/ - List all transactions for the logged in user.
+GET  /api/user/transactions/<reference>/ - Get details of a specific transaction.
 
 
 ## Security Design

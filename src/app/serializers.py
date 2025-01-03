@@ -19,28 +19,54 @@ class AdminCompanySerializer(serializers.ModelSerializer):
         model = models.Company
         fields = "__all__"
 
-    owner_groups = CompanyGroupSerializer(many=True)
+    owner_groups = CompanyGroupSerializer(many=True, min_length=1)
 
     def is_valid(self, *, raise_exception=False):
-        # Verify request body is valid
         super().is_valid(raise_exception=raise_exception)
-
-        # Verify user making the request is a superuser, or is in at least one of the groups belonging to the Company
         request_user = self.context["request"].user
+        if request_user.is_superuser:
+            return True  # Superusers bypass group checks
+
+        # User must be in at least one of the groups defined in the request,
+        # and one group defined on the instance being updated
         request_groups = [i["name"] for i in self.validated_data.get("owner_groups", [])]
         user_groups = [i.name for i in request_user.groups.all()]
-        groups_invalid = len(set(request_groups).intersection(user_groups)) == 0 and request_user.is_superuser is False
+        instance_groups = [i.name for i in self.instance.owner_groups.all()] if self.instance else []
+        request_groups_invalid = len(set(request_groups).intersection(user_groups)) == 0
+        instance_groups_invalid = len(instance_groups) > 0 and len(set(instance_groups).intersection(user_groups)) == 0
 
-        if raise_exception and groups_invalid:
-            raise ValidationError({"owner_groups": ["You must be in at least one of the specified group."]})
-        return not groups_invalid
+        if raise_exception and any([request_groups_invalid, instance_groups_invalid]):
+            raise ValidationError(
+                {
+                    "owner_groups": [
+                        "You must be in at least one of the specified groups when creating or updating Company records."
+                    ]
+                }
+            )
+        return not any([request_groups_invalid, instance_groups_invalid])
 
     def create(self, validated_data):
-        # Create Company object, then associate groups, creating them if they don't exist
-        owner_groups = validated_data.pop("owner_groups")
+        """Create a Company object, then get or create Group objects and associate them with the company"""
+        owner_groups = [i["name"] for i in validated_data.pop("owner_groups", [])]
         instance = super().create(validated_data)
         for group_name in owner_groups:
-            instance.owner_groups.add(Group.objects.get_or_create(name=group_name["name"])[0])
+            instance.owner_groups.add(Group.objects.get_or_create(name=group_name)[0])
+        return instance
+
+    def update(self, instance, validated_data):
+        """
+        Update a Company object, then get or create Group objects and associate them with the company,
+        removing any old groups that were not included in the request
+        """
+        owner_groups = [i["name"] for i in validated_data.pop("owner_groups", [])]
+        instance = super().update(instance, validated_data)
+        # If groups were specified in the request (they may not be in PATCH requests), update the groups
+        if owner_groups:
+            for group_name in owner_groups:
+                instance.owner_groups.add(Group.objects.get_or_create(name=group_name)[0])
+            for group in instance.owner_groups.all():
+                if group.name not in owner_groups:
+                    instance.owner_groups.remove(group)
         return instance
 
 

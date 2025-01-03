@@ -15,6 +15,6 @@ class CompanyViewSet(viewsets.ModelViewSet):
     lookup_field = "code"
 
     def get_serializer_class(self):
-        if self.request.user.is_superuser or self.action in ["create", "update"]:
+        if self.request.user.is_superuser or self.action in ["create", "partial_update", "update"]:
             return serializers.AdminCompanySerializer
         return super().get_serializer_class()
