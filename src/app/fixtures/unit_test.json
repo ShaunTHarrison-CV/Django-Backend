@@ -3,7 +3,7 @@
     "model": "auth.group",
     "pk": 1,
     "fields": {
-      "name": "company_FXC001",
+      "name": "company_ABC001",
       "permissions": []
     }
   },
@@ -11,7 +11,7 @@
     "model": "auth.group",
     "pk": 2,
     "fields": {
-      "name": "company_FXC002",
+      "name": "company_ABC002",
       "permissions": []
     }
   },

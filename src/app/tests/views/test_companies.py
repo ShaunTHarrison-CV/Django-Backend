@@ -1,12 +1,11 @@
 import json
 
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.core.management import call_command
 from rest_framework.test import APITestCase
 
 
 class TestModelCompany(APITestCase):
-
     fixtures = ["unit_test.json"]
 
     def setUp(self):
@@ -63,11 +62,50 @@ class TestModelCompany(APITestCase):
             "code": "ABC001",
             "id": 1,
             "name": "ABC Company",
-            "owner_groups": [1, 3],
+            "owner_groups": [{"name": "company_ABC001"}, {"name": "company_FX_Supergroup"}],
         }
 
     def test_create_company(self):
-        assert False
+        request_body = {
+            "code": "UNT",
+            "owner_groups": [
+                {"name": "company_ABC002"},
+            ],
+        }
+
+        # Check default serializer behaviour
+        response = self.client.post("/api/companies/", data=json.dumps(request_body), content_type="application/json")
+        assert response.status_code == 400
+        assert response.json() == {"name": ["This field is required."]}
+
+        # User1 is not part of group company_ABC002, so request is rejected
+        request_body["name"] = "Unit Test Company"
+        response = self.client.post("/api/companies/", data=json.dumps(request_body), content_type="application/json")
+        assert response.status_code == 400
+        assert response.json() == {"owner_groups": ["You must be in at least one of the specified group."]}
+
+        # Add User1 to appropriate group, so request is approved
+        self.user.groups.add(Group.objects.get(name="company_ABC002"))
+        response = self.client.post("/api/companies/", data=json.dumps(request_body), content_type="application/json")
+        assert response.status_code == 201
+        assert response.json() == {
+            "code": "UNT",
+            "id": 4,
+            "name": "Unit Test Company",
+            "owner_groups": [{"name": "company_ABC002"}],
+        }
+
+        # Superusers can create companies for groups that they're not part of
+        request_body["code"] = "UNT002"
+        self.client.force_login(User.objects.get(username="admin"))
+        response = self.client.post("/api/companies/", data=json.dumps(request_body), content_type="application/json")
+        assert response.status_code == 201
+        assert response.json() == {
+            "code": "UNT002",
+            "id": 5,
+            "name": "Unit Test Company",
+            "owner_groups": [{"name": "company_ABC002"}],
+        }
 
     def test_update_company(self):
         # Test update with valid and invalid user

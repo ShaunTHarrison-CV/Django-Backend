@@ -3,8 +3,8 @@ This is a simple REST API to showcase how I build applications. The data model a
 how I use the django-rest-framework to build, test and deploy a functional API, not to build a useful API.
 
 ## Data Model
-Company - A Company is a representation of someone who has something to sell. Mapped to a Django user.
-Product - A Product is a representation of something to be sold. Mapped to a Django user.
+Company - A Company is a representation of someone who has something to sell.
+Product - A Product is a representation of something to be sold.
 Transaction - A Transaction is a representation of a person buying one or many instances of a Product.
 
 ## Endpoints
@@ -24,14 +24,16 @@ GET  /api/transactions/<reference>/ - Get details of a specific transaction.
 
 
 ## Security Design
-Companies are associated with a Django user group. Modifying the company or creating a product under a company requires the logged in user to be
+Companies are associated with a Django user group. Creating or modifying Companies or Products under a company requires the user
+to be in one of the user groups associated with the company. Multiple groups were chosen over users for several reasons:
+- Allow multiple users to administer a company, in case of employee absence.
+- Allow a group to be given to a specific company and users, to limit a group to one company.
+- Allow "umbrella" groups to be created and assigned to multiple companies, allowing administration of an enterprise.
 
 Users must be logged in to access any API endpoints apart from the swagger docs. 
 Users can only modify Companies/Products that they have permission to. Attempting to modify a Company/Product for a different user will return a 403.
-Users can only see Transactions that they own. Listing Transactions will show only that user's transactions. Attempting to retrieve a 
+Transactions can only be viewed by the user that made it, or the company that owns the Product within. Listing Transactions will filter out any records
+outside of that. Attempting to retrieve a Transaction outside of that will return a 404, even if it exists. 
+This is to prevent iterative attacks being used to identify lists of valid transaction reference numbers.
 
-When accessing a list endpoint the backend will
-filter for only resources that are owned by the logged in user. If the user requests a resource that exists but they are not allowed to
-see, a 404 response will be given. This is to prevent attackers from iterating through codes to build a list of valid codes.
-
-Users who are django admins can access all resources.
+Users who are django superusers bypass the group / ownership requirements.

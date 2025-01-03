@@ -11,7 +11,7 @@ class TestModelCompany(TestCase):
     fixtures = ["unit_test.json"]
 
     def setUp(self):
-        self.group = Group.objects.get(name="company_FXC001")
+        self.group = Group.objects.get(name="company_ABC001")
 
     def test_create(self):
         company = Company.objects.create(code="CP001", name="Company 1")

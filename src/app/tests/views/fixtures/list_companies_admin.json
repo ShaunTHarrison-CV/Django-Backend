@@ -4,29 +4,39 @@
   "previous": null,
   "results": [
     {
-      "id": 1,
       "code": "ABC001",
+      "id": 1,
       "name": "ABC Company",
       "owner_groups": [
-        1,
-        3
+        {
+          "name": "company_ABC001"
+        },
+        {
+          "name": "company_FX_Supergroup"
+        }
       ]
     },
     {
-      "id": 2,
       "code": "ABC002",
+      "id": 2,
       "name": "ABC Company 2",
       "owner_groups": [
-        2,
-        3
+        {
+          "name": "company_ABC002"
+        },
+        {
+          "name": "company_FX_Supergroup"
+        }
       ]
     },
     {
-      "id": 3,
       "code": "FXC003",
+      "id": 3,
       "name": "Fixture Company 3",
       "owner_groups": [
-        4
+        {
+          "name": "company_FXC003"
+        }
       ]
     }
   ]
