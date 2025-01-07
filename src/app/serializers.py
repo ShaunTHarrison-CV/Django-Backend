@@ -20,6 +20,7 @@ class AdminCompanySerializer(serializers.ModelSerializer):
         fields = "__all__"
 
     owner_groups = CompanyGroupSerializer(many=True, min_length=1)
+    total_products = serializers.IntegerField(read_only=True)
 
     def is_valid(self, *, raise_exception=False):
         super().is_valid(raise_exception=raise_exception)
@@ -74,3 +75,4 @@ class CompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Company
         exclude = ["id", "owner_groups"]
+    total_products = serializers.IntegerField(read_only=True)

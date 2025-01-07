@@ -4,42 +4,52 @@
   "previous": null,
   "results": [
     {
+      "total_products": 1,
       "code": "ABC001",
       "name": "ABC Company"
     },
     {
+      "total_products": 1,
       "code": "ABC002",
       "name": "ABC Company 2"
     },
     {
+      "total_products": 0,
       "code": "FXC003",
       "name": "Fixture Company 3"
     },
     {
+      "total_products": 0,
       "code": "FXC004",
       "name": "Fixture Company 4"
     },
     {
+      "total_products": 0,
       "code": "FXC005",
       "name": "Fixture Company 5"
     },
     {
+      "total_products": 0,
       "code": "FXC006",
       "name": "Fixture Company 6"
     },
     {
+      "total_products": 0,
       "code": "FXC007",
       "name": "Fixture Company 7"
     },
     {
+      "total_products": 0,
       "code": "FXC008",
       "name": "Fixture Company 8"
     },
     {
+      "total_products": 0,
       "code": "FXC009",
       "name": "Fixture Company 9"
     },
     {
+      "total_products": 0,
       "code": "FXC010",
       "name": "Fixture Company 10"
     }

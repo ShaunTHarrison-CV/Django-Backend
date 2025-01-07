@@ -55,7 +55,7 @@ class TestViewCompany(APITestCase):
     def test_retrieve_company(self):
         response = self.client.get("/api/companies/ABC001/")
         assert response.status_code == 200
-        assert response.json() == {"code": "ABC001", "name": "ABC Company"}
+        assert response.json() == {"code": "ABC001", "name": "ABC Company", "total_products": 1}
 
         self.client.force_login(User.objects.get(username="admin"))
         response = self.client.get("/api/companies/ABC001/")
@@ -64,6 +64,7 @@ class TestViewCompany(APITestCase):
             "code": "ABC001",
             "id": 1,
             "name": "ABC Company",
+            "total_products": 1,
             "owner_groups": [{"name": "company_ABC001"}, {"name": "company_FX_Supergroup"}],
         }
 
@@ -75,6 +76,7 @@ class TestViewCompany(APITestCase):
                 {"name": "company_ABC002"},
                 {"name": "company_UnitTest"},
             ],
+            "total_proucts": 0
         }
 
         # Check default serializer behaviour
@@ -113,6 +115,7 @@ class TestViewCompany(APITestCase):
             "code": "UNT",
             "id": 4,
             "name": "Unit Test Company",
+            "total_products": 0,
             "owner_groups": [{"name": "company_ABC002"}, {"name": "company_UnitTest"}],
         }
 
@@ -125,6 +128,7 @@ class TestViewCompany(APITestCase):
             "code": "UNT002",
             "id": 5,
             "name": "Unit Test Company",
+            "total_products": 0,
             "owner_groups": [{"name": "company_ABC002"}, {"name": "company_UnitTest"}],
         }
 
@@ -170,6 +174,7 @@ class TestViewCompany(APITestCase):
             "code": "ABC002",
             "id": 2,
             "name": "Updated Company",
+            "total_products": 1,
             "owner_groups": [{"name": "company_ABC001"}],
         }
         company = Company.objects.get(id=2)
@@ -188,6 +193,7 @@ class TestViewCompany(APITestCase):
             "code": "ABC001",
             "id": 1,
             "name": "ABC Company",
+            "total_products": 1,
             "owner_groups": [{"name": "company_Admin"}],
         }
         company = Company.objects.get(id=1)
@@ -242,6 +248,7 @@ class TestViewCompany(APITestCase):
             "code": "Updated Code",
             "id": 2,
             "name": "Updated Company",
+            "total_products": 1,
             "owner_groups": [{"name": "company_ABC001"}],
         }
         company = Company.objects.get(id=2)
@@ -261,6 +268,7 @@ class TestViewCompany(APITestCase):
             "code": "Updated Code 2",
             "id": 1,
             "name": "Updated Company",
+            "total_products": 1,
             "owner_groups": [{"name": "company_Admin"}],
         }
         company = Company.objects.get(id=1)

@@ -4,202 +4,252 @@
   "previous": null,
   "results": [
     {
+      "total_products": 1,
       "code": "ABC001",
       "name": "ABC Company"
     },
     {
+      "total_products": 1,
       "code": "ABC002",
       "name": "ABC Company 2"
     },
     {
+      "total_products": 0,
       "code": "FXC003",
       "name": "Fixture Company 3"
     },
     {
+      "total_products": 0,
       "code": "FXC004",
       "name": "Fixture Company 4"
     },
     {
+      "total_products": 0,
       "code": "FXC005",
       "name": "Fixture Company 5"
     },
     {
+      "total_products": 0,
       "code": "FXC006",
       "name": "Fixture Company 6"
     },
     {
+      "total_products": 0,
       "code": "FXC007",
       "name": "Fixture Company 7"
     },
     {
+      "total_products": 0,
       "code": "FXC008",
       "name": "Fixture Company 8"
     },
     {
+      "total_products": 0,
       "code": "FXC009",
       "name": "Fixture Company 9"
     },
     {
+      "total_products": 0,
       "code": "FXC010",
       "name": "Fixture Company 10"
     },
     {
+      "total_products": 0,
       "code": "FXC011",
       "name": "Fixture Company 11"
     },
     {
+      "total_products": 0,
       "code": "FXC012",
       "name": "Fixture Company 12"
     },
     {
+      "total_products": 0,
       "code": "FXC013",
       "name": "Fixture Company 13"
     },
     {
+      "total_products": 0,
       "code": "FXC014",
       "name": "Fixture Company 14"
     },
     {
+      "total_products": 0,
       "code": "FXC015",
       "name": "Fixture Company 15"
     },
     {
+      "total_products": 0,
       "code": "FXC016",
       "name": "Fixture Company 16"
     },
     {
+      "total_products": 0,
       "code": "FXC017",
       "name": "Fixture Company 17"
     },
     {
+      "total_products": 0,
       "code": "FXC018",
       "name": "Fixture Company 18"
     },
     {
+      "total_products": 0,
       "code": "FXC019",
       "name": "Fixture Company 19"
     },
     {
+      "total_products": 0,
       "code": "FXC020",
       "name": "Fixture Company 20"
     },
     {
+      "total_products": 0,
       "code": "FXC021",
       "name": "Fixture Company 21"
     },
     {
+      "total_products": 0,
       "code": "FXC022",
       "name": "Fixture Company 22"
     },
     {
+      "total_products": 0,
       "code": "FXC023",
       "name": "Fixture Company 23"
     },
     {
+      "total_products": 0,
       "code": "FXC024",
       "name": "Fixture Company 24"
     },
     {
+      "total_products": 0,
       "code": "FXC025",
       "name": "Fixture Company 25"
     },
     {
+      "total_products": 0,
       "code": "FXC026",
       "name": "Fixture Company 26"
     },
     {
+      "total_products": 0,
       "code": "FXC027",
       "name": "Fixture Company 27"
     },
     {
+      "total_products": 0,
       "code": "FXC028",
       "name": "Fixture Company 28"
     },
     {
+      "total_products": 0,
       "code": "FXC029",
       "name": "Fixture Company 29"
     },
     {
+      "total_products": 0,
       "code": "FXC030",
       "name": "Fixture Company 30"
     },
     {
+      "total_products": 0,
       "code": "FXC031",
       "name": "Fixture Company 31"
     },
     {
+      "total_products": 0,
       "code": "FXC032",
       "name": "Fixture Company 32"
     },
     {
+      "total_products": 0,
       "code": "FXC033",
       "name": "Fixture Company 33"
     },
     {
+      "total_products": 0,
       "code": "FXC034",
       "name": "Fixture Company 34"
     },
     {
+      "total_products": 0,
       "code": "FXC035",
       "name": "Fixture Company 35"
     },
     {
+      "total_products": 0,
       "code": "FXC036",
       "name": "Fixture Company 36"
     },
     {
+      "total_products": 0,
       "code": "FXC037",
       "name": "Fixture Company 37"
     },
     {
+      "total_products": 0,
       "code": "FXC038",
       "name": "Fixture Company 38"
     },
     {
+      "total_products": 0,
       "code": "FXC039",
       "name": "Fixture Company 39"
     },
     {
+      "total_products": 0,
       "code": "FXC040",
       "name": "Fixture Company 40"
     },
     {
+      "total_products": 0,
       "code": "FXC041",
       "name": "Fixture Company 41"
     },
     {
+      "total_products": 0,
       "code": "FXC042",
       "name": "Fixture Company 42"
     },
     {
+      "total_products": 0,
       "code": "FXC043",
       "name": "Fixture Company 43"
     },
     {
+      "total_products": 0,
       "code": "FXC044",
       "name": "Fixture Company 44"
     },
     {
+      "total_products": 0,
       "code": "FXC045",
       "name": "Fixture Company 45"
     },
     {
+      "total_products": 0,
       "code": "FXC046",
       "name": "Fixture Company 46"
     },
     {
+      "total_products": 0,
       "code": "FXC047",
       "name": "Fixture Company 47"
     },
     {
+      "total_products": 0,
       "code": "FXC048",
       "name": "Fixture Company 48"
     },
     {
+      "total_products": 0,
       "code": "FXC049",
       "name": "Fixture Company 49"
     },
     {
+      "total_products": 0,
       "code": "FXC050",
       "name": "Fixture Company 50"
     }

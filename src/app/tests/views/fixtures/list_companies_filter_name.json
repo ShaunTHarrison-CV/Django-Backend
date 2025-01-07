@@ -5,7 +5,8 @@
   "results": [
     {
       "code": "ABC001",
-      "name": "ABC Company"
+      "name": "ABC Company",
+      "total_products": 1
     }
   ]
 }

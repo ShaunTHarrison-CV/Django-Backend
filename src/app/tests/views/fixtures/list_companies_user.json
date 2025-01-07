@@ -5,15 +5,18 @@
   "results": [
     {
       "code": "ABC001",
-      "name": "ABC Company"
+      "name": "ABC Company",
+      "total_products": 1
     },
     {
       "code": "ABC002",
-      "name": "ABC Company 2"
+      "name": "ABC Company 2",
+      "total_products": 1
     },
     {
       "code": "FXC003",
-      "name": "Fixture Company 3"
+      "name": "Fixture Company 3",
+      "total_products": 0
     }
   ]
 }

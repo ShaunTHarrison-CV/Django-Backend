@@ -7,6 +7,7 @@
       "code": "ABC001",
       "id": 1,
       "name": "ABC Company",
+      "total_products": 1,
       "owner_groups": [
         {
           "name": "company_ABC001"
@@ -20,6 +21,7 @@
       "code": "ABC002",
       "id": 2,
       "name": "ABC Company 2",
+      "total_products": 1,
       "owner_groups": [
         {
           "name": "company_ABC002"
@@ -33,6 +35,7 @@
       "code": "FXC003",
       "id": 3,
       "name": "Fixture Company 3",
+      "total_products": 0,
       "owner_groups": [
         {
           "name": "company_FXC003"
