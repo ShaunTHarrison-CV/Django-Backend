@@ -14,10 +14,10 @@ class CompanyGroupSerializer(serializers.ModelSerializer):
     name = serializers.CharField()
 
 
-class AdminCompanySerializer(serializers.ModelSerializer):
+class CompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Company
-        fields = "__all__"
+        exclude = ["id"]
 
     owner_groups = CompanyGroupSerializer(many=True, min_length=1)
     total_products = serializers.IntegerField(read_only=True)
@@ -69,10 +69,3 @@ class AdminCompanySerializer(serializers.ModelSerializer):
                 if group.name not in owner_groups:
                     instance.owner_groups.remove(group)
         return instance
-
-
-class CompanySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Company
-        exclude = ["id", "owner_groups"]
-    total_products = serializers.IntegerField(read_only=True)

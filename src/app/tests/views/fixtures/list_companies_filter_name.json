@@ -4,9 +4,17 @@
   "previous": null,
   "results": [
     {
+      "owner_groups": [
+        {
+          "name": "company_ABC001"
+        },
+        {
+          "name": "company_FX_Supergroup_ABC"
+        }
+      ],
+      "total_products": 1,
       "code": "ABC001",
-      "name": "ABC Company",
-      "total_products": 1
+      "name": "ABC Company"
     }
   ]
 }

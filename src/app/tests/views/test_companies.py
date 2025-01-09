@@ -11,23 +11,20 @@ class TestViewCompany(APITestCase):
     fixtures = ["unit_test.json"]
 
     def setUp(self):
-        self.user = User.objects.get(username="User1")
+        self.user = User.objects.get(username="admin")
         self.client.force_login(self.user)
 
     def test_list_companies(self):
-        response = self.client.get("/api/companies/")
-        assert response.status_code == 200
-        with open("app/tests/views/fixtures/list_companies_user.json") as infile:
-            assert response.json() == json.load(infile)
-
-        # Superusers can see ID and admin info
-        self.client.force_login(User.objects.get(username="admin"))
-        response = self.client.get("/api/companies/")
-        assert response.status_code == 200
-        with open("app/tests/views/fixtures/list_companies_admin.json") as infile:
-            assert response.json() == json.load(infile)
+        """Test that the appropriate companies are returned, based on the groups the users are in"""
+        for username in ["admin", "UserABC001", "UserABCSuper", "UserABCFXC1", "UserFXC002"]:
+            self.client.force_login(User.objects.get(username=username))
+            response = self.client.get("/api/companies/")
+            assert response.status_code == 200
+            with open(f"app/tests/views/fixtures/list_companies_{username}.json") as infile:
+                assert response.json() == json.load(infile)
 
     def test_list_companies_pagination(self):
+        """Test that responses are correctly paginated and the next/previous values are populated correctly"""
         call_command("loaddata", "app/fixtures/bulk_companies.json")
         # Page 1, previous is null
         with open("app/tests/views/fixtures/list_companies_page_1.json") as infile:
@@ -36,13 +33,15 @@ class TestViewCompany(APITestCase):
         with open("app/tests/views/fixtures/list_companies_page_2.json") as infile:
             assert self.client.get("/api/companies/?page=2").json() == json.load(infile)
         # Page 3, next is null
-        with open("app/tests/views/fixtures/list_companies_page_2.json") as infile:
-            assert self.client.get("/api/companies/?page=2").json() == json.load(infile)
+        with open("app/tests/views/fixtures/list_companies_page_3.json") as infile:
+            assert self.client.get("/api/companies/?page=3").json() == json.load(infile)
         # Custom page size
         with open("app/tests/views/fixtures/list_companies_page_size.json") as infile:
             assert self.client.get("/api/companies/?pageSize=10").json() == json.load(infile)
 
     def test_list_companies_filter(self):
+        """Test each supported querystring filter filters correctly"""
+        # Check each single filter
         for term, value in [
             ("code", "ABC001"),
             ("code__icontains", "ABC"),
@@ -51,22 +50,36 @@ class TestViewCompany(APITestCase):
         ]:
             with open(f"app/tests/views/fixtures/list_companies_filter_{term}.json") as infile:
                 assert self.client.get("/api/companies/", query_params={term: value}).json() == json.load(infile)
+        # Check dual filters
+        with open("app/tests/views/fixtures/list_companies_filter_combined.json") as infile:
+            query = {"name__icontains": "ABC", "code__icontains": "002"}
+            assert self.client.get("/api/companies/", query_params=query).json() == json.load(infile)
 
     def test_retrieve_company(self):
-        response = self.client.get("/api/companies/ABC001/")
-        assert response.status_code == 200
-        assert response.json() == {"code": "ABC001", "name": "ABC Company", "total_products": 1}
-
-        self.client.force_login(User.objects.get(username="admin"))
-        response = self.client.get("/api/companies/ABC001/")
-        assert response.status_code == 200
-        assert response.json() == {
-            "code": "ABC001",
-            "id": 1,
-            "name": "ABC Company",
-            "total_products": 1,
-            "owner_groups": [{"name": "company_ABC001"}, {"name": "company_FX_Supergroup"}],
+        response_200 = {
+            "code": "FXC001",
+            "name": "Fixture Company 1",
+            "owner_groups": [{"name": "company_FXC001"}],
+            "total_products": 0,
         }
+        response_404 = {"detail": "No Company matches the given query."}
+
+        for username, expected_status, expected_response in [
+            ("admin", 200, response_200),
+            ("UserABC001", 404, response_404),
+            ("UserABCSuper", 404, response_404),
+            ("UserABCFXC1", 200, response_200),
+            ("UserFXC002", 404, response_404),
+        ]:
+            self.client.force_login(User.objects.get(username=username))
+            response = self.client.get("/api/companies/FXC001/")
+            assert response.status_code == expected_status
+            assert response.json() == expected_response
+
+        # Record that actually doesn't exist, should behave the same as existing but not allowed
+        response = self.client.get("/api/companies/FXC002/")
+        assert response.status_code == 404
+        assert response.json() == response_404
 
     def test_create_company(self):
         request_body = {
@@ -76,7 +89,7 @@ class TestViewCompany(APITestCase):
                 {"name": "company_ABC002"},
                 {"name": "company_UnitTest"},
             ],
-            "total_proucts": 0
+            "total_proucts": 0,
         }
 
         # Check default serializer behaviour

@@ -4,51 +4,107 @@
   "previous": null,
   "results": [
     {
+      "owner_groups": [
+        {
+          "name": "company_ABC001"
+        },
+        {
+          "name": "company_FX_Supergroup_ABC"
+        }
+      ],
       "total_products": 1,
       "code": "ABC001",
       "name": "ABC Company"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_ABC002"
+        },
+        {
+          "name": "company_FX_Supergroup_ABC"
+        }
+      ],
       "total_products": 1,
       "code": "ABC002",
       "name": "ABC Company 2"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
-      "code": "FXC003",
-      "name": "Fixture Company 3"
+      "code": "FXC001",
+      "name": "Fixture Company 1"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC004",
       "name": "Fixture Company 4"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC005",
       "name": "Fixture Company 5"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC006",
       "name": "Fixture Company 6"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC007",
       "name": "Fixture Company 7"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC008",
       "name": "Fixture Company 8"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC009",
       "name": "Fixture Company 9"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC010",
       "name": "Fixture Company 10"

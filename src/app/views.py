@@ -3,14 +3,25 @@ from rest_framework import viewsets, mixins
 from app import models, serializers, filter_backends
 
 
-class ModelViewSetNoDestroy(
+class MultiTenantedViewSet(
     mixins.CreateModelMixin,
     mixins.RetrieveModelMixin,
     mixins.UpdateModelMixin,
     mixins.ListModelMixin,
     viewsets.GenericViewSet,
 ):
-    pass
+    def get_queryset(self):
+        # Superusers bypass multi-tenanting restrictions, allowing site administration
+        if self.request.user.is_superuser:
+            return super().get_queryset()
+        # Filter results so only records related to groups the user is in. If a user attempts to view/change a record
+        # that they don't have access to, the API pretends that it doesn't exist in the DB.
+        filter_arg = {
+            models.Company: "owner_groups__in",
+            models.Product: "company__owner_groups__in",
+            models.Transaction: "product__company__owner_groups__in",
+        }[self.queryset.model]
+        return super().get_queryset().filter(**{filter_arg: self.request.user.groups.all()})
 
 
 class CreateWithAuthenticatedUserMixin(mixins.CreateModelMixin):
@@ -18,13 +29,8 @@ class CreateWithAuthenticatedUserMixin(mixins.CreateModelMixin):
         return serializer.save(user=self.request.user)
 
 
-class CompanyViewSet(ModelViewSetNoDestroy):
+class CompanyViewSet(MultiTenantedViewSet):
     queryset = models.Company.objects.all().order_by("code")
     serializer_class = serializers.CompanySerializer
     filterset_class = filter_backends.CompanyFilter
     lookup_field = "code"
-
-    def get_serializer_class(self):
-        if self.request.user.is_superuser or self.action in ["create", "partial_update", "update"]:
-            return serializers.AdminCompanySerializer
-        return super().get_serializer_class()

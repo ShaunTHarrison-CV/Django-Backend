@@ -4,251 +4,507 @@
   "previous": null,
   "results": [
     {
+      "owner_groups": [
+        {
+          "name": "company_ABC001"
+        },
+        {
+          "name": "company_FX_Supergroup_ABC"
+        }
+      ],
       "total_products": 1,
       "code": "ABC001",
       "name": "ABC Company"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_ABC002"
+        },
+        {
+          "name": "company_FX_Supergroup_ABC"
+        }
+      ],
       "total_products": 1,
       "code": "ABC002",
       "name": "ABC Company 2"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
-      "code": "FXC003",
-      "name": "Fixture Company 3"
+      "code": "FXC001",
+      "name": "Fixture Company 1"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC004",
       "name": "Fixture Company 4"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC005",
       "name": "Fixture Company 5"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC006",
       "name": "Fixture Company 6"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC007",
       "name": "Fixture Company 7"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC008",
       "name": "Fixture Company 8"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC009",
       "name": "Fixture Company 9"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC010",
       "name": "Fixture Company 10"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC011",
       "name": "Fixture Company 11"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC012",
       "name": "Fixture Company 12"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC013",
       "name": "Fixture Company 13"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC014",
       "name": "Fixture Company 14"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC015",
       "name": "Fixture Company 15"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC016",
       "name": "Fixture Company 16"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC017",
       "name": "Fixture Company 17"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC018",
       "name": "Fixture Company 18"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC019",
       "name": "Fixture Company 19"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC020",
       "name": "Fixture Company 20"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC021",
       "name": "Fixture Company 21"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC022",
       "name": "Fixture Company 22"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC023",
       "name": "Fixture Company 23"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC024",
       "name": "Fixture Company 24"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC025",
       "name": "Fixture Company 25"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC026",
       "name": "Fixture Company 26"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC027",
       "name": "Fixture Company 27"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC028",
       "name": "Fixture Company 28"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC029",
       "name": "Fixture Company 29"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC030",
       "name": "Fixture Company 30"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC031",
       "name": "Fixture Company 31"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC032",
       "name": "Fixture Company 32"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC033",
       "name": "Fixture Company 33"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC034",
       "name": "Fixture Company 34"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC035",
       "name": "Fixture Company 35"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC036",
       "name": "Fixture Company 36"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC037",
       "name": "Fixture Company 37"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC038",
       "name": "Fixture Company 38"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC039",
       "name": "Fixture Company 39"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC040",
       "name": "Fixture Company 40"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC041",
       "name": "Fixture Company 41"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC042",
       "name": "Fixture Company 42"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC043",
       "name": "Fixture Company 43"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC044",
       "name": "Fixture Company 44"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC045",
       "name": "Fixture Company 45"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC046",
       "name": "Fixture Company 46"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC047",
       "name": "Fixture Company 47"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC048",
       "name": "Fixture Company 48"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC049",
       "name": "Fixture Company 49"
     },
     {
+      "owner_groups": [
+        {
+          "name": "company_FXC001"
+        }
+      ],
       "total_products": 0,
       "code": "FXC050",
       "name": "Fixture Company 50"
