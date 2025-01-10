@@ -19,6 +19,7 @@ class CompanySerializer(serializers.ModelSerializer):
         model = models.Company
         exclude = ["id"]
 
+    code = serializers.CharField(read_only=True)
     owner_groups = CompanyGroupSerializer(many=True, min_length=1)
     total_products = serializers.IntegerField(read_only=True)
 
@@ -49,6 +50,8 @@ class CompanySerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         """Create a Company object, then get or create Group objects and associate them with the company"""
         owner_groups = [i["name"] for i in validated_data.pop("owner_groups", [])]
+        if self.fields["code"].read_only:
+            validated_data["code"] = models.Company.generate_code()
         instance = super().create(validated_data)
         for group_name in owner_groups:
             instance.owner_groups.add(Group.objects.get_or_create(name=group_name)[0])
@@ -69,3 +72,9 @@ class CompanySerializer(serializers.ModelSerializer):
                 if group.name not in owner_groups:
                     instance.owner_groups.remove(group)
         return instance
+
+
+class AdminCompanySerializer(CompanySerializer):
+    """Allow superusers to modify company codes, in case of obscure use case"""
+
+    code = serializers.CharField()

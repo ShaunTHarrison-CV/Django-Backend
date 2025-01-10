@@ -1,3 +1,6 @@
+import random
+import string
+
 from django.contrib.auth.models import User, Group
 from django.db import models
 
@@ -13,6 +16,13 @@ class Company(models.Model):
     @property
     def total_products(self):
         return self.product_set.count()
+
+    @staticmethod
+    def generate_code():
+        while True:
+            code = "".join(random.choices(string.ascii_uppercase + string.digits, k=8))
+            if Company.objects.filter(code=code).count() == 0:
+                return code
 
 
 class Product(models.Model):

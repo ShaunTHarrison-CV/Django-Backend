@@ -24,13 +24,11 @@ class MultiTenantedViewSet(
         return super().get_queryset().filter(**{filter_arg: self.request.user.groups.all()})
 
 
-class CreateWithAuthenticatedUserMixin(mixins.CreateModelMixin):
-    def perform_create(self, serializer):
-        return serializer.save(user=self.request.user)
-
-
 class CompanyViewSet(MultiTenantedViewSet):
     queryset = models.Company.objects.all().order_by("code")
     serializer_class = serializers.CompanySerializer
     filterset_class = filter_backends.CompanyFilter
     lookup_field = "code"
+
+    def get_serializer_class(self):
+        return serializers.AdminCompanySerializer if self.request.user.is_superuser else serializers.CompanySerializer
